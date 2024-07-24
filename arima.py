@@ -54,9 +54,6 @@ forecast_df = forecast.conf_int()
 forecast_df['yhat'] = forecast.predicted_mean
 forecast_df['ds'] = future_dates
 
-# Adjust the column names for consistency
-forecast_df.columns = ['lower y', 'upper y', 'yhat', 'ds']
-
 # Display the forecast
 print("Forecast tail:\n", forecast_df.tail())
 
