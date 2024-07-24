@@ -46,6 +46,8 @@ print(model_fit.summary())
 # Create a dataframe with future dates for forecasting
 forecast_periods = 2 * 30 * 12  # Approximation for 2 months, 30 days/month * 12 hours/day
 future_dates = pd.date_range(start=df2.index[-1] + pd.Timedelta(hours=1), periods=forecast_periods, freq='H')
+
+# Ensure future_dates is filtered correctly to match forecast periods
 future_dates = future_dates[future_dates.indexer_between_time('07:00', '19:00')]
 
 # Make the forecast
